@@ -1,4 +1,4 @@
-﻿namespace MaccabiSearch.Application.Services.Implementations.Tests
+﻿namespace MaccabiSearc.Tests.Utils
 {
     public class Constants
     {
