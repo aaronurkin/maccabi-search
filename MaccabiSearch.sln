@@ -31,6 +31,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaccabiSearch.Api", "Maccab
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5549C60C-ADFB-4638-B937-0695BD51A19F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3E72160C-DC44-478E-95EC-4E2E3D325BB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaccabiSearch.Infrastructure.Services.Implementations.Tests", "Tests\MaccabiSearch.Infrastructure.Services.Implementations.Tests\MaccabiSearch.Infrastructure.Services.Implementations.Tests.csproj", "{AE36C210-9AC0-42DA-9CE0-0A1EA8860211}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,10 @@ Global
 		{5549C60C-ADFB-4638-B937-0695BD51A19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5549C60C-ADFB-4638-B937-0695BD51A19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5549C60C-ADFB-4638-B937-0695BD51A19F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE36C210-9AC0-42DA-9CE0-0A1EA8860211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE36C210-9AC0-42DA-9CE0-0A1EA8860211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE36C210-9AC0-42DA-9CE0-0A1EA8860211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE36C210-9AC0-42DA-9CE0-0A1EA8860211}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +103,7 @@ Global
 		{1D9E0789-256F-4146-B418-85400F289A99} = {B90320FE-946A-4E76-9166-51D645BC1AA3}
 		{B28EA779-DB0C-42E5-A573-BE6C7BE0B9F5} = {B90320FE-946A-4E76-9166-51D645BC1AA3}
 		{421D49E5-8F0C-462F-BF33-27A816FDCBB2} = {B90320FE-946A-4E76-9166-51D645BC1AA3}
+		{AE36C210-9AC0-42DA-9CE0-0A1EA8860211} = {3E72160C-DC44-478E-95EC-4E2E3D325BB6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8E49854-643D-4531-94E3-1AE739BDC760}
