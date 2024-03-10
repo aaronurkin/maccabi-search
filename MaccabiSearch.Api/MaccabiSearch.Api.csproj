@@ -14,6 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Application\MaccabiSearch.Application.Services.Implementations\MaccabiSearch.Application.Services.Implementations.csproj" />
+    <ProjectReference Include="..\Application\MaccabiSearch.Application.Services\MaccabiSearch.Application.Services.csproj" />
+    <ProjectReference Include="..\Common\MaccabiSearch.Common.Services.Implementations\MaccabiSearch.Common.Services.Implementations.csproj" />
     <ProjectReference Include="..\Infrastructure\MaccabiSearch.Infrastructure.Services.Implementations\MaccabiSearch.Infrastructure.Services.Implementations.csproj" />
   </ItemGroup>
 
