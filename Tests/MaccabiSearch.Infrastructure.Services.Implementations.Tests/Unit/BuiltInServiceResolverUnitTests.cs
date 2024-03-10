@@ -35,15 +35,13 @@ namespace MaccabiSearch.Infrastructure.Services.Implementations.Tests
         public void Resolve_ReturnsRequestedByKeyService_Successfully()
         {
             // Arrange
-            const string ServiceKey = "MockServiceKey";
-
             services
-                .AddKeyedSingleton<IMockService, MockService>(ServiceKey);
+                .AddKeyedSingleton<IMockService, MockService>(Constants.MockServiceKey);
 
             var target = new BuiltInServiceResolver(services.BuildServiceProvider());
 
             // Act
-            var actual = target.Resolve<IMockService>(ServiceKey);
+            var actual = target.Resolve<IMockService>(Constants.MockServiceKey);
 
             // Assert
             Assert.IsNotNull(actual);
@@ -55,15 +53,13 @@ namespace MaccabiSearch.Infrastructure.Services.Implementations.Tests
         public void Resolve_ReturnsDefaultServiceRequestedByKey_Successfully()
         {
             // Arrange
-            const string ServiceKey = "MockServiceKey";
-
             services
                 .AddSingleton<IMockService, MockService>();
 
             var target = new BuiltInServiceResolver(services.BuildServiceProvider());
 
             // Act
-            var actual = target.Resolve<IMockService>(ServiceKey);
+            var actual = target.Resolve<IMockService>(Constants.MockServiceKey);
 
             // Assert
             Assert.IsNotNull(actual);
