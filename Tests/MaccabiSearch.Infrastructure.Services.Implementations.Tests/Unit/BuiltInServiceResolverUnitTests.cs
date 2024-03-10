@@ -1,4 +1,6 @@
-﻿using MaccabiSearch.Common.Services.Implementations;
+﻿using MaccabiSearc.Tests.Utils;
+using MaccabiSearch.Common.Services.Implementations;
+using MaccabiSearch.Tests.Utils;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MaccabiSearch.Infrastructure.Services.Implementations.Tests
@@ -10,16 +12,13 @@ namespace MaccabiSearch.Infrastructure.Services.Implementations.Tests
 
         public BuiltInServiceResolverUnitTests()
         {
-            services = new ServiceCollection();
+            services = new ServiceCollection().AddTestsServices();
         }
 
         [TestMethod]
         public void Resolve_ReturnsRequestedService_Successfully()
         {
             // Arrange
-            services
-                .AddSingleton<IMockService, MockService>();
-
             var target = new BuiltInServiceResolver(services.BuildServiceProvider());
 
             // Act

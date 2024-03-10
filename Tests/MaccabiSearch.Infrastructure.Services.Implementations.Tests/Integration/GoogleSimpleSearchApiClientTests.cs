@@ -1,9 +1,11 @@
-﻿using MaccabiSearch.Common.Services;
+﻿using MaccabiSearc.Tests.Utils;
+using MaccabiSearch.Common.Services;
 using MaccabiSearch.Common.Services.Implementations;
 using MaccabiSearch.Domain.Models;
 using MaccabiSearch.Infrastructure.Models;
 using MaccabiSearch.Infrastructure.Models.GoogleSearchEngine;
 using MaccabiSearch.Infrastructure.Services.Implementations.Mappers;
+using MaccabiSearch.Tests.Utils;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net;
 using System.Text.Json;
@@ -17,17 +19,7 @@ namespace MaccabiSearch.Infrastructure.Services.Implementations.Tests
 
         public GoogleSimpleSearchApiClientIntegrationTests()
         {
-            services = new ServiceCollection();
-            services
-                .AddSingleton<IGoogleSearchResponseResolver, GoogleSearchDefaultFailedResponseResolver>()
-                .AddKeyedSingleton<IGoogleSearchResponseResolver, GoogleSearchOkResponseResolver>(HttpStatusCode.OK);
-            services
-                .AddSingleton(new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                });
-            services
-                .AddSingleton<IModelMapper<GoogleSearchEngineResponse, IEnumerable<SearchResult>>, GoogleSearchEngineResponseSearchResultMapper>();
+            services = new ServiceCollection().AddTestsServices();
         }
 
         [TestMethod]

@@ -1,4 +1,6 @@
-﻿namespace MaccabiSearch.Infrastructure.Services.Implementations.Tests
+﻿using MaccabiSearc.Tests.Utils;
+
+namespace MaccabiSearch.Tests.Utils
 {
     public class MockService : IMockService
     {

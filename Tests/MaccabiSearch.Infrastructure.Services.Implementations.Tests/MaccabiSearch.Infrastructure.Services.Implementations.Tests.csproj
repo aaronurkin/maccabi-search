@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
     <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
@@ -25,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Common\MaccabiSearch.Common.Services.Implementations\MaccabiSearch.Common.Services.Implementations.csproj" />
     <ProjectReference Include="..\..\Infrastructure\MaccabiSearch.Infrastructure.Services.Implementations\MaccabiSearch.Infrastructure.Services.Implementations.csproj" />
+    <ProjectReference Include="..\MaccabiSearch.Tests.Utils\MaccabiSearch.Tests.Utils.csproj" />
   </ItemGroup>
 
 </Project>

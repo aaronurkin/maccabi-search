@@ -33,15 +33,15 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3E72160C-DC44-478E-95EC-4E2E3D325BB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaccabiSearch.Infrastructure.Services.Implementations.Tests", "Tests\MaccabiSearch.Infrastructure.Services.Implementations.Tests\MaccabiSearch.Infrastructure.Services.Implementations.Tests.csproj", "{AE36C210-9AC0-42DA-9CE0-0A1EA8860211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaccabiSearch.Infrastructure.Services.Implementations.Tests", "Tests\MaccabiSearch.Infrastructure.Services.Implementations.Tests\MaccabiSearch.Infrastructure.Services.Implementations.Tests.csproj", "{AE36C210-9AC0-42DA-9CE0-0A1EA8860211}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F8EB8C9D-86B2-43AB-94FD-40C1E8C85129}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaccabiSearch.Domain.Models", "Domain\MaccabiSearch.Domain.Models\MaccabiSearch.Domain.Models.csproj", "{599E250D-D160-435B-BB3D-F7FD12DD223B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaccabiSearch.Domain.Models", "Domain\MaccabiSearch.Domain.Models\MaccabiSearch.Domain.Models.csproj", "{599E250D-D160-435B-BB3D-F7FD12DD223B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD2D00AC-C0DD-4B19-8A30-62C4CE2754AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaccabiSearch.Application.Services.Implementations.Tests", "Tests\MaccabiSearch.Application.Services.Implementations.Tests\MaccabiSearch.Application.Services.Implementations.Tests.csproj", "{7484EA06-3304-48A2-BBFE-271D65A99D70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaccabiSearch.Application.Services.Implementations.Tests", "Tests\MaccabiSearch.Application.Services.Implementations.Tests\MaccabiSearch.Application.Services.Implementations.Tests.csproj", "{7484EA06-3304-48A2-BBFE-271D65A99D70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaccabiSearch.Tests.Utils", "Tests\MaccabiSearch.Tests.Utils\MaccabiSearch.Tests.Utils.csproj", "{8E86F722-4996-4229-A905-BCC557D9E804}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +105,10 @@ Global
 		{7484EA06-3304-48A2-BBFE-271D65A99D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7484EA06-3304-48A2-BBFE-271D65A99D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7484EA06-3304-48A2-BBFE-271D65A99D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E86F722-4996-4229-A905-BCC557D9E804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E86F722-4996-4229-A905-BCC557D9E804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E86F722-4996-4229-A905-BCC557D9E804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E86F722-4996-4229-A905-BCC557D9E804}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,8 +125,8 @@ Global
 		{421D49E5-8F0C-462F-BF33-27A816FDCBB2} = {B90320FE-946A-4E76-9166-51D645BC1AA3}
 		{AE36C210-9AC0-42DA-9CE0-0A1EA8860211} = {3E72160C-DC44-478E-95EC-4E2E3D325BB6}
 		{599E250D-D160-435B-BB3D-F7FD12DD223B} = {F8EB8C9D-86B2-43AB-94FD-40C1E8C85129}
-		{BD2D00AC-C0DD-4B19-8A30-62C4CE2754AA} = {3E72160C-DC44-478E-95EC-4E2E3D325BB6}
-		{7484EA06-3304-48A2-BBFE-271D65A99D70} = {BD2D00AC-C0DD-4B19-8A30-62C4CE2754AA}
+		{7484EA06-3304-48A2-BBFE-271D65A99D70} = {3E72160C-DC44-478E-95EC-4E2E3D325BB6}
+		{8E86F722-4996-4229-A905-BCC557D9E804} = {3E72160C-DC44-478E-95EC-4E2E3D325BB6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8E49854-643D-4531-94E3-1AE739BDC760}
