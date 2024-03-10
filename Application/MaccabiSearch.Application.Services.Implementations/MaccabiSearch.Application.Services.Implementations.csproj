@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Common\MaccabiSearch.Common.Services\MaccabiSearch.Common.Services.csproj" />
+    <ProjectReference Include="..\..\Domain\MaccabiSearch.Domain.Models\MaccabiSearch.Domain.Models.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\MaccabiSearch.Infrastructure.Services\MaccabiSearch.Infrastructure.Services.csproj" />
     <ProjectReference Include="..\MaccabiSearch.Application.Services\MaccabiSearch.Application.Services.csproj" />
   </ItemGroup>
 
