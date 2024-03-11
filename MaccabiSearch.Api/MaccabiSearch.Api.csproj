@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
@@ -17,6 +21,7 @@
     <ProjectReference Include="..\Application\MaccabiSearch.Application.Services.Implementations\MaccabiSearch.Application.Services.Implementations.csproj" />
     <ProjectReference Include="..\Application\MaccabiSearch.Application.Services\MaccabiSearch.Application.Services.csproj" />
     <ProjectReference Include="..\Common\MaccabiSearch.Common.Services.Implementations\MaccabiSearch.Common.Services.Implementations.csproj" />
+    <ProjectReference Include="..\Domain\MaccabiSearch.Domain.Services.Implementations.EntityFramework\MaccabiSearch.Domain.Services.Implementations.EntityFramework.csproj" />
     <ProjectReference Include="..\Infrastructure\MaccabiSearch.Infrastructure.Services.Implementations\MaccabiSearch.Infrastructure.Services.Implementations.csproj" />
   </ItemGroup>
 

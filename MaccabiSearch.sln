@@ -41,7 +41,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaccabiSearch.Domain.Models
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaccabiSearch.Application.Services.Implementations.Tests", "Tests\MaccabiSearch.Application.Services.Implementations.Tests\MaccabiSearch.Application.Services.Implementations.Tests.csproj", "{7484EA06-3304-48A2-BBFE-271D65A99D70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaccabiSearch.Tests.Utils", "Tests\MaccabiSearch.Tests.Utils\MaccabiSearch.Tests.Utils.csproj", "{8E86F722-4996-4229-A905-BCC557D9E804}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaccabiSearch.Tests.Utils", "Tests\MaccabiSearch.Tests.Utils\MaccabiSearch.Tests.Utils.csproj", "{8E86F722-4996-4229-A905-BCC557D9E804}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaccabiSearch.Domain.Services", "Domain\MaccabiSearch.Domain.Services\MaccabiSearch.Domain.Services.csproj", "{B2F2238F-6A9F-427F-BFE9-CD8742418F32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaccabiSearch.Domain.Services.Implementations.EntityFramework", "Domain\MaccabiSearch.Domain.Services.Implementations.EntityFramework\MaccabiSearch.Domain.Services.Implementations.EntityFramework.csproj", "{80271409-F335-43CF-ABDA-A67CC72A211B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +113,14 @@ Global
 		{8E86F722-4996-4229-A905-BCC557D9E804}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E86F722-4996-4229-A905-BCC557D9E804}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E86F722-4996-4229-A905-BCC557D9E804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2F2238F-6A9F-427F-BFE9-CD8742418F32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F2238F-6A9F-427F-BFE9-CD8742418F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F2238F-6A9F-427F-BFE9-CD8742418F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F2238F-6A9F-427F-BFE9-CD8742418F32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80271409-F335-43CF-ABDA-A67CC72A211B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80271409-F335-43CF-ABDA-A67CC72A211B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80271409-F335-43CF-ABDA-A67CC72A211B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80271409-F335-43CF-ABDA-A67CC72A211B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +139,8 @@ Global
 		{599E250D-D160-435B-BB3D-F7FD12DD223B} = {F8EB8C9D-86B2-43AB-94FD-40C1E8C85129}
 		{7484EA06-3304-48A2-BBFE-271D65A99D70} = {3E72160C-DC44-478E-95EC-4E2E3D325BB6}
 		{8E86F722-4996-4229-A905-BCC557D9E804} = {3E72160C-DC44-478E-95EC-4E2E3D325BB6}
+		{B2F2238F-6A9F-427F-BFE9-CD8742418F32} = {F8EB8C9D-86B2-43AB-94FD-40C1E8C85129}
+		{80271409-F335-43CF-ABDA-A67CC72A211B} = {F8EB8C9D-86B2-43AB-94FD-40C1E8C85129}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8E49854-643D-4531-94E3-1AE739BDC760}
