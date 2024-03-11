@@ -4,11 +4,15 @@ using MaccabiSearch.Common.Models;
 using MaccabiSearch.Common.Services;
 using MaccabiSearch.Common.Services.Implementations;
 using MaccabiSearch.Domain.Models;
+using MaccabiSearch.Domain.Services;
+using MaccabiSearch.Domain.Services.Implementations;
+using MaccabiSearch.Domain.Services.Implementations.EntityFramework;
 using MaccabiSearch.Infrastructure.Models;
 using MaccabiSearch.Infrastructure.Models.GoogleSearchEngine;
 using MaccabiSearch.Infrastructure.Services;
 using MaccabiSearch.Infrastructure.Services.Implementations;
 using MaccabiSearch.Infrastructure.Services.Implementations.Mappers;
+using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Text.Json;
 
@@ -22,6 +26,19 @@ namespace MaccabiSearch.Api.IoC
                 .AddCommonSingletonServices(configuration)
                 .AddCommonScopedServices(configuration)
                 .AddCommonTransientServices(configuration);
+
+            services
+                .AddStackExchangeRedisCache(options =>
+                {
+                    options.Configuration = configuration.GetConnectionString("RedisCache");
+                });
+
+            services
+                .AddDbContext<MaccabiSearchDbContext>(options =>
+                {
+                    options.UseNpgsql(configuration.GetConnectionString("MaccabiSearchDB"));
+                });
+
             services
                 .AddHttpClient<ISearchEngineApiClient, GoogleSimpleSearchApiClient>(client =>
                 {
@@ -73,10 +90,16 @@ namespace MaccabiSearch.Api.IoC
                 });
 
             services
+                .AddSingleton<ICacheService, RedisCacheService>();
+
+            services
                 .AddSingleton<IGoogleSearchResponseResolver, GoogleSearchDefaultFailedResponseResolver>();
 
             services
                 .AddKeyedSingleton<IGoogleSearchResponseResolver, GoogleSearchOkResponseResolver>(HttpStatusCode.OK);
+
+            services
+                .AddSingleton<IModelMapper<SearchResult, SearchResultPgEntity>, SearchResultPgEntityMapper>();
 
             services
                 .AddSingleton<IModelMapper<GoogleSearchEngineResponse, IEnumerable<SearchResult>>, GoogleSearchEngineResponseSearchResultMapper>();
@@ -87,7 +110,10 @@ namespace MaccabiSearch.Api.IoC
         private static IServiceCollection AddCommonScopedServices(this IServiceCollection services, IConfiguration configuration)
         {
             services
-                .AddScoped<ISearchService, AllEnginesSearchService>();
+                .AddScoped<ISearchService, SearchResultsManager>();
+
+            services
+                .AddScoped<IRepository<SearchResultPgEntity>, SearchResultRepository>();
             return services;
         }
 

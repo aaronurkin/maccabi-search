@@ -9,16 +9,17 @@ services:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
     environment:
-      - ConnectionStrings__MaccabiSearchDB="Host=maccabisearch.database;Post=5432;Database=maccabisearch;Username=postgres;Password=postgres;Include Error Detail=true"
-      - Search__PageSize=5
-      - Search__PageNumber=1
-      - GoogleSearchEngine__Id=PLEASE_INSERT_HERE_THE_GOOGLE_SEARCH_ENGINE_ID 
-      - GoogleSearchEngine__ApiKey=PLEASE_INSERT_HERE_THE_GOOGLE_SEARCH_ENGINE_ID
-      - GoogleSearchEngine__Endpoint__Search__BaseUrl=https://www.googleapis.com
-      - GoogleSearchEngine__Endpoint__Search__Template=customsearch/v1/?key={0}&cx={1}&q={{0}}&num={{1}}&start={{2}}
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=5000
-      - ASPNETCORE_HTTPS_PORTS=5001
+      ConnectionStrings__RedisCache: maccabisearch.redis:6379
+      ConnectionStrings__MaccabiSearchDB: Host=maccabisearch.database;Port=5432;Database=maccabisearch;Username=postgres;Password=postgres;
+      Search__PageSize: 5
+      Search__PageNumber: 1
+      GoogleSearchEngine__Id: PLEASE_INSERT_HERE_THE_GOOGLE_SEARCH_ENGINE_ID 
+      GoogleSearchEngine__ApiKey: PLEASE_INSERT_HERE_THE_GOOGLE_SEARCH_ENGINE_ID
+      GoogleSearchEngine__Endpoint__Search__BaseUrl: https://www.googleapis.com
+      GoogleSearchEngine__Endpoint__Search__Template: customsearch/v1/?key={0}&cx={1}&q={{0}}&num={{1}}&start={{2}}
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: 5000
+      ASPNETCORE_HTTPS_PORTS: 5001
 
   maccabisearch.database:
     volumes:
@@ -26,9 +27,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_DB=maccabisearch
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      POSTGRES_DB: maccabisearch
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
 
   maccabisearch.pgadmin:
     ports:
@@ -36,8 +37,12 @@ services:
     volumes:
       - ./.development/maccabisearch-pgadmin:/root/.pgadmin
     environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@example.com
-      - PGADMIN_DEFAULT_PASSWORD=unused
-      - PGADMIN_CONFIG_SERVER_MODE=False
-      - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
-      - PGADMIN_CONFIG_SUPPORT_SSH_TUNNEL=False
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: unused
+      PGADMIN_CONFIG_SERVER_MODE: False
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: False
+      PGADMIN_CONFIG_SUPPORT_SSH_TUNNEL: False
+
+  maccabisearch.redis:
+    ports:
+      - "6379:6379"

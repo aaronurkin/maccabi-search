@@ -22,12 +22,12 @@ namespace MaccabiSearch.Application.Services.Implementations
         /// </summary>
         /// <param name="data">Search data.</param>
         /// <returns>Search results wrapped with the <see cref="IServiceResult"/>.</returns>
-        public async Task<IServiceResult> Search(SearchDto data)
+        public virtual async Task<IServiceResult> Search(SearchDto data)
         {
             var clientResults = await Task.WhenAll(clients.Select(client => client.Search(data)));
             var results = clientResults
                 .Where(r => r.Status == ServiceResultStatus.Succeeded)
-                .Select(r => r.Data as IEnumerable<SearchResult>);
+                .SelectMany(r => r.Data as IEnumerable<SearchResult>);
 
             if (!results.Any())
             {
@@ -38,7 +38,7 @@ namespace MaccabiSearch.Application.Services.Implementations
             //TODO: Save results to the DB using one of options:
             //  - Use a repository depending on EntityFramework
             //  - Send a message to queue to save results async to respond faster to a client.
-            var result = new ServiceResult<IEnumerable<IEnumerable<SearchResult>>>(results!, ServiceResultStatus.Succeeded);
+            var result = new ServiceResult<IEnumerable<SearchResult>>(results!, ServiceResultStatus.Succeeded);
             return result;
         }
     }
