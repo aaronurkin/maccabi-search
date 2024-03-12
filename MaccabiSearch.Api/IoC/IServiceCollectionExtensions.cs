@@ -1,4 +1,5 @@
-﻿using MaccabiSearch.Application.Services;
+﻿using MaccabiSearch.Application.Models;
+using MaccabiSearch.Application.Services;
 using MaccabiSearch.Application.Services.Implementations;
 using MaccabiSearch.Common.Models;
 using MaccabiSearch.Common.Services;
@@ -13,6 +14,8 @@ using MaccabiSearch.Infrastructure.Services;
 using MaccabiSearch.Infrastructure.Services.Implementations;
 using MaccabiSearch.Infrastructure.Services.Implementations.Mappers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Primitives;
 using System.Net;
 using System.Text.Json;
 
@@ -104,11 +107,25 @@ namespace MaccabiSearch.Api.IoC
             services
                 .AddSingleton<IModelMapper<GoogleSearchEngineResponse, IEnumerable<SearchResult>>, GoogleSearchEngineResponseSearchResultMapper>();
 
+            services
+                .AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             return services;
         }
 
         private static IServiceCollection AddCommonScopedServices(this IServiceCollection services, IConfiguration configuration)
         {
+            services
+                .AddScoped<IRequestMetadata>(serviceProvider =>
+                {
+                    var trackingId = default(StringValues);
+                    var accessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
+
+                    accessor?.HttpContext?.Request.Headers.TryGetValue("Tracking-Id", out trackingId);
+
+                    return new RequestMetadata(trackingId.ToString());
+                });
+
             services
                 .AddScoped<ISearchService, SearchResultsManager>();
 
