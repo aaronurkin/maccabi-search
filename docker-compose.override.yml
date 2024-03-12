@@ -14,7 +14,7 @@ services:
       Search__PageSize: 5
       Search__PageNumber: 1
       GoogleSearchEngine__Id: PLEASE_INSERT_HERE_THE_GOOGLE_SEARCH_ENGINE_ID 
-      GoogleSearchEngine__ApiKey: PLEASE_INSERT_HERE_THE_GOOGLE_SEARCH_ENGINE_ID
+      GoogleSearchEngine__ApiKey: PLEASE_INSERT_HERE_THE_GOOGLE_SEARCH_ENGINE_API_KEY
       GoogleSearchEngine__Endpoint__Search__BaseUrl: https://www.googleapis.com
       GoogleSearchEngine__Endpoint__Search__Template: customsearch/v1/?key={0}&cx={1}&q={{0}}&num={{1}}&start={{2}}
       ASPNETCORE_ENVIRONMENT: Development
